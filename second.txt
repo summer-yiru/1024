@@ -1,0 +1,16 @@
+﻿#include<stdio.h>
+//闰年判断的方法:
+//1:能被400整除的数
+//2:能被4整除的但同时不能被100整除的数
+int main(){
+	int year;
+	for (year = 1000; year <= 2020; year++){
+		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+			printf("%d\t", year);
+		}
+	}
+	getchar();
+	return 0;
+	
+
+}
