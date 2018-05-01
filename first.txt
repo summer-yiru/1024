@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#define SWAPBIT(m) ((m&0xaaaaaaaa)>>1) | ((m&0x55555555)<<1)
+int main(){
+	//写一个宏可以将一个数字的奇数位和偶数位交换
+	int n = 10;
+	/*
+	00000000 00000000 00000000 00001010
+	10101010 10101010 10101010 10101010    0xaaaaaaaa
+    01010101 01010101 01010101 01010101    0x55555555
+	一个数按位与上0xaaaaaaaa得到偶数位 (偶数位右移一位)
+	按位与上0x55555555得到奇数位(奇数位左移一位)
+	*/
+	printf("%d\n", SWAPBIT(n));
+	system("pause");
+	return 0;
+}
