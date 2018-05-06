@@ -1,0 +1,80 @@
+﻿#define _CRT_SECURE_NO_WARNINGS 1
+//思路：利用二分查找的特点，数组内的数据是依次递增的特点，
+//可以将数组中的中间地址取出来依次比较，如果要查找的数大于中间值，则必然在后半段，
+//首地址就会变成middle + 1，如果要查找的小于中间值，则必然在前半段，尾部地址变成middle - 1，
+//直到要查询的数与数组内的某个数相等为止。
+//3种求两个平均值的方法
+//z = (x + y) / 2;
+//z = x + (y-x) / 2;
+//z = (x&y) + ((x^y) >> 1);
+#include<stdio.h>
+#include<stdlib.h>
+#include<assert.h>
+//非递归
+/*int BinarySearch(int *arr, int len,int key){
+	int left = 0;
+	int right = len - 1;
+	assert(arr);
+	assert(len > 0);
+	int mid = 0;
+	while (left<=right)
+	{
+       mid =left+((right-left)>>1);
+		//mid = (left + right) / 2;
+		if (*(arr + mid) > key)
+		{
+			right = mid - 1;
+
+		}
+	   if (*(arr + mid) < key)
+		{
+			left = mid + 1;
+
+		}
+		if (*(arr + mid) == key)
+		{
+			printf("%d在数组中,下标为%d\n",key,mid);
+			break;
+		}
+	}
+	if (left>right)
+	printf("%d不在数组中\n", key);
+    return 0;
+}
+*/
+//递归
+int BinarySearch(int *arr,int key,int left,int right){
+	int mid = 0;
+	assert(arr);
+	if (left>right)
+	{
+		return -1;
+	}
+	mid = left + ((right - left) >> 1);
+	if (*(arr+mid)==key)
+	{
+		printf("%d在数组中,下标为%d\n", key, mid);
+	}
+	if (*(arr + mid)> key)
+	{
+		BinarySearch(arr, key, left, mid-1);
+	}
+	if (*(arr + mid)< key)
+	{
+		BinarySearch(arr, key, mid+1,right);
+	}
+	return 0;
+}
+int main(){
+	int arr[] = { 1, 2, 4, 5, 6, 7, 10, 13 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	int left = 0;
+	int right = len - 1;
+	int key = 0;
+	printf("请输入你要查的数\n");
+	scanf("%d", &key);
+	//BinarySearch(arr,len,key);
+	BinarySearch(arr,key,left,right);
+	system("pause");
+	return 0;
+}
