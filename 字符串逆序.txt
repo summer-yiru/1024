@@ -1,0 +1,30 @@
+﻿/*三步旋转法，先将要旋转的k个字符串逆序，再将剩余的字符串逆序，最后再对整个字符串逆序就得到了旋转k个字符后的字符串*/
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+void reverse(char *left, char *right){
+	while (left<right)
+	{
+		char ret = *left;
+		*left = *right;
+		*right = ret;
+		left++;
+		right--;
+	}
+}
+void left_move(char arr[],int num){
+	int len = strlen(arr);
+	reverse(arr,arr+num-1);
+	reverse(arr+num, arr + len - 1);
+	reverse(arr, arr+len-1);
+}
+int main(){
+	char arr[] = "abcdef";
+	int n;
+	printf("请输入你要左旋的字符个数");
+	scanf("%d", &n);
+	left_move(arr,n);
+	printf("%s", arr);
+	system("pause");
+	return 0;
+}
