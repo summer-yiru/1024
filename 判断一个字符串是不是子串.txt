@@ -1,0 +1,40 @@
+﻿/*根据左旋或右旋结果和原字符串的联系，可以将一个给定的字符串拷贝一份放在该字符串的后面得到新的字符串，
+只需要判断另一个字符串是不是组合的新字符串的子字符串就可以解决问题*/
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char * my_strncat(char *dest,char *str,int len){
+	char *cp = dest;
+	while (*cp)
+		cp++;
+	while ((*str!='\0')&&(len--)){
+		*cp++ = *str++;
+	}
+	*cp = '\0';
+	return dest;
+}
+int main(){
+	char arr[20] = { 0 };
+	char str[10] = { 0 };
+	char *ret;
+	printf("请输入你要判断的两个字符串\n");
+	gets(arr);
+	gets(str);
+	if (strlen(arr) == strlen(str)){
+		my_strncat(arr,arr,strlen(arr));
+		ret = strstr(arr, str);
+		if (ret!=NULL){
+			printf("是\n");
+		}
+		else{
+			printf("不是\n");
+		}
+	}
+	else
+	{
+		printf("不是\n");
+	}
+    system("pause");
+	return 0;
+}
