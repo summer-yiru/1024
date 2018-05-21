@@ -1,6 +1,6 @@
-#pragma once
-//Ö¸Õë¿ÉÒÔ¸³Öµ,ÀàĞÍ²»¿ÉÒÔ¸³Öµ
-typedef int(*Compare)(DataType , DataType );//compareÊÇÒ»¸öÀàĞÍ
+ï»¿#pragma once
+//æŒ‡é’ˆå¯ä»¥èµ‹å€¼,ç±»å‹ä¸å¯ä»¥èµ‹å€¼
+typedef int(*Compare)(DataType , DataType );//compareæ˜¯ä¸€ä¸ªç±»å‹
 typedef int DataType;
 typedef struct Heap
 {
@@ -9,7 +9,7 @@ typedef struct Heap
 	int _size;
 	Compare _compare;
 }Heap;
-//¶ÑµÄ»ù±¾²Ù×÷
+//å †çš„åŸºæœ¬æ“ä½œ
 void HeapInit(Heap *hp, Compare com);
 void HeapCreate(Heap *hp, DataType*array, int size, Compare com);
 void HeapAdjustDown(Heap* hp, int parent);
@@ -21,8 +21,8 @@ void InsertHeap(Heap *hp, DataType data);
 void DeleteHeapTop(Heap *hp);
 DataType GetHeapTop(Heap *hp);
 int SizeHeap(Heap *hp);
-//´ó¶Ñ
+//å¤§å †
 int Greater(DataType left, DataType right);
-//Ğ¡¶Ñ
+//å°å †
 int Less(DataType left, DataType right);
 void swap(DataType*a, DataType *b);

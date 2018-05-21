@@ -1,18 +1,18 @@
-#include "Heap.h"
+ï»¿#include "Heap.h"
 #include<assert.h>
 #include<stdlib.h>
 #include<malloc.h>
 #include<stdio.h>
-//Ğ¡¶Ñ
+//å°å †
 int Less(DataType left, DataType right){
 	return left < right;
 }
-//´ó¶Ñ
+//å¤§å †
 int Greater(DataType left, DataType right){
 	return left > right;
 }
 
-//½»»»
+//äº¤æ¢
 void swap(DataType*a,DataType *b){
 	DataType c = 0;
 	assert(a);
@@ -21,9 +21,9 @@ void swap(DataType*a,DataType *b){
 	*a = *b;
 	*b = c;
 }
-//µ÷Õû¶ÑÏòÏÂ
+//è°ƒæ•´å †å‘ä¸‹
 void HeapAdjustDown(Heap* hp, int parent){
-	//ÓÃchildÀ´±ê¼Ç×óÓÒº¢×ÓÖĞ×îĞ¡µÄÔªËØ
+	//ç”¨childæ¥æ ‡è®°å·¦å³å­©å­ä¸­æœ€å°çš„å…ƒç´ 
 	int child = parent * 2 + 1;
 	int size = hp->_size;
 	while (child<size)
@@ -33,7 +33,7 @@ void HeapAdjustDown(Heap* hp, int parent){
 		if (hp->_compare(hp->_array[child],hp->_array[parent]))
 		{
 			swap(&hp->_array[parent], &hp->_array[child]);
-			//½»»»ºó¾ÍÓ°ÏìÁËÏÂÃæµÄ½á¹¹,ĞèÒª¼ÌĞøµ÷
+			//äº¤æ¢åå°±å½±å“äº†ä¸‹é¢çš„ç»“æ„,éœ€è¦ç»§ç»­è°ƒ
 			parent = child;
 			child = parent * 2 + 1;
 		}
@@ -44,7 +44,7 @@ void HeapAdjustDown(Heap* hp, int parent){
 	}
 	
 }
-//µ÷Õû¶ÑÏòÉÏ
+//è°ƒæ•´å †å‘ä¸Š
 void HeapAdjustUp(Heap* hp, int child){
 	int parent = ((child-1)>>1);
 	while (child)
@@ -61,7 +61,7 @@ void HeapAdjustUp(Heap* hp, int child){
 	
 
 }
-//¶ÑµÄ³õÊ¼»¯
+//å †çš„åˆå§‹åŒ–
 void HeapInit(Heap *hp,Compare com){
 	hp->_array = (DataType*)malloc(sizeof(DataType)*3);
 	if (hp->_array == NULL)
@@ -73,7 +73,7 @@ void HeapInit(Heap *hp,Compare com){
 	hp->_size = 0;
 	hp->_compare = com;
 }
-//¶Ñ´´½¨
+//å †åˆ›å»º
 void HeapCreate(Heap *hp, DataType*array, int size,Compare com){
 	int i = 0;
 	int root = ((size - 2) >> 1);
@@ -85,7 +85,7 @@ void HeapCreate(Heap *hp, DataType*array, int size,Compare com){
 		assert(0);
 		return;
 	}
-    //½«Êı×éµÄÔªËØ·Åµ½¶ÑÖĞÈ¥
+    //å°†æ•°ç»„çš„å…ƒç´ æ”¾åˆ°å †ä¸­å»
 	for (i = 0; i < size; i++)
 	{
 		hp->_array[i] = array[i];
@@ -93,14 +93,14 @@ void HeapCreate(Heap *hp, DataType*array, int size,Compare com){
 	hp->_size = size;
 	hp->_capacity = size;
 	hp->_compare = com;
-   //¶Ñµ÷Õû1.ÏòÏÂµ÷Õû
+   //å †è°ƒæ•´1.å‘ä¸‹è°ƒæ•´
 	for (; root >=0; --root)
 	{
 		HeapAdjustDown(hp,root);
 	}
 	
 }
-//¼ì²é¶ÑÈİÁ¿  //¿ª±ÙĞÂ¿Õ¼ä,°áÒÆÔªËØ,ÊÍ·Å¾É¿Õ¼ä
+//æ£€æŸ¥å †å®¹é‡  //å¼€è¾Ÿæ–°ç©ºé—´,æ¬ç§»å…ƒç´ ,é‡Šæ”¾æ—§ç©ºé—´
 void _CheckCapacity(Heap *hp){
 	int i = 0;
 	assert(hp);
@@ -122,7 +122,7 @@ void _CheckCapacity(Heap *hp){
 	}
 
 }
-//Ïò¶ÑÖĞ²åÈëÔªËØ
+//å‘å †ä¸­æ’å…¥å…ƒç´ 
 void InsertHeap(Heap *hp,DataType data){
 	assert(hp);
 	_CheckCapacity(hp);
@@ -143,7 +143,7 @@ int EmptyHeap(Heap *hp){
 	assert(hp);
 	return 0 == hp->_size;
 }
-//Ïò¶ÑÖĞÉ¾³ıÔªËØ--Ò»°ãÉ¾³ı¶Ñ¶¥ÔªËØ
+//å‘å †ä¸­åˆ é™¤å…ƒç´ --ä¸€èˆ¬åˆ é™¤å †é¡¶å…ƒç´ 
 void DeleteHeapTop(Heap *hp, DataType data){
 	assert(hp);
 	if (EmptyHeap(hp))
@@ -152,7 +152,7 @@ void DeleteHeapTop(Heap *hp, DataType data){
 	hp->_size--;
 	HeapAdjustDown(hp, 0);
 }
-//¶ÑÖĞÓĞĞ§µÄÔªËØ
+//å †ä¸­æœ‰æ•ˆçš„å…ƒç´ 
 int SizeHeap(Heap *hp){
 	return hp->_size;
 }

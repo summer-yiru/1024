@@ -1,7 +1,7 @@
-#include "Heap.h"
+ï»¿#include "Heap.h"
 #include<stdio.h>
 #include<stdlib.h>
-//ÏòÏÂµ÷Õû 
+//å‘ä¸‹è°ƒæ•´ 
 void HeapAdjust(int *arrar,int size,int parent){
 	int child = parent * 2 + 1;
 	while (child<size)
@@ -21,14 +21,14 @@ void HeapAdjust(int *arrar,int size,int parent){
 	
 }
 void HeapSort(int arrar[],int size){
-	//1,½¨¶Ñ
+	//1,å»ºå †
 	int root = ((size - 2) >> 1);
 	int end = size - 1;
 	for ( ;  root>=0; --root)
 	{
 		HeapAdjust(arrar, size, root);
 	}
-	//2,µ÷Õû
+	//2,è°ƒæ•´
 	while (end)
 	{
 		swap(&arrar[end],&arrar[0]);
