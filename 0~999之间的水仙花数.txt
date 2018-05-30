@@ -1,0 +1,26 @@
+﻿#define _CRT_SECURE_NO_WARNINGS
+/*
+求出0～999之间的所有“水仙花数”并输出
+“水仙花数”是指一个三位数
+各位数字的立方和确好等于该数本身
+153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3
+*/
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int n = 100;
+	while (n<=999)
+	{
+		int t1 = n % 10;
+		int t2 = n / 10 % 10;
+		int t3 = n / 100;
+		int t4 = t1*t1*t1 + t2*t2*t2 + t3*t3*t3;
+		if (t4 == n){
+			printf("%d\t", n);
+		}
+		n++;
+	}
+
+    system("pause");
+	return 0;
+}
