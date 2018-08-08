@@ -1,0 +1,42 @@
+﻿
+#define _CRT_SECURE_NO_WARNINGS
+/*
+共13行i
+6个空格1个*-----13/2-i     2i+1
+5个空格3个*
+4个空格5个*
+3个空格7个*
+2个空格9个*
+1个空格11个*
+0个空格13个*------
+1个空格11个* i+1         
+2个空格9个*
+3个空格7个*
+4个空格5个*
+5个空格3个*
+6个空格1个*
+*/
+#include<stdio.h>
+#include<stdlib.h>
+int main(){  
+	for (int i = 0; i<(13/2);i++){
+		for (int j = 0; j < (13 / 2)-i;j++){
+			printf(" ");
+		}
+		for (int k = 0; k < (2*i + 1);k++){
+			printf("*");
+		}
+		printf("\n");
+  }
+	for (int i = 0; i<(13 / 2); i++){
+		for (int j = 0; j <(i+1); j++){
+			printf(" ");
+		}
+		for (int k = 0; k < (11-2*i); k++){
+			printf("*");
+		}
+		printf("\n");
+	}
+	system("pause");
+	return 0;
+}
