@@ -1,0 +1,328 @@
+/* Header */
+a.cd-nav-trigger h6 {
+    display: none;
+}
+ul.side_nav li {
+    list-style: none;
+}
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+.container.demo-2 {
+    width: 100%;
+    padding: 0;
+}
+.demo-1 .large-header {
+	background-image: url('../img/demo-1-bg.jpg');
+	min-height:600px;
+}
+
+.demo-2 .large-header {
+	background-image: url('../images/banner.jpg');
+	background-position: center bottom;
+}
+
+.demo-3 .large-header {
+	background: #7f8c8d;
+}
+
+.demo-4 .large-header {
+	background: #f9f1e9;
+}
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.demo-1 .main-title, 
+.demo-3 .main-title {
+	text-transform: uppercase;
+	font-size: 4.2em;
+	letter-spacing: 0.1em;
+}
+
+.demo-2 .main-title {
+	font-weight: normal;
+    font-size: 2.5em;
+    padding-left: 0px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+.demo-2 p.title{
+	font-weight: normal;
+    font-size:3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: rgba(238, 242, 243, 0.48);
+    padding: 6px 115px;
+    color: #E7ECEB;
+	    display: none;
+}
+p.title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    top:60%;
+    left:50%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}
+.demo-2 .main-title::before {
+	content: '';
+	width: 20vw;
+	height: 20vw;
+	min-width: 3.5em;
+	min-height: 3.5em;
+	background: url(../img/deco.svg) no-repeat center center;
+	background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	z-index: -1;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+h1.main-title a {
+    color: #fff;
+}
+h1.main-title a:hover{
+	 text-decoration:none;
+	 color:#fff;
+}
+h1.main-title a:focus{
+	 text-decoration:none;
+	 color:#fff;
+}
+.demo-3 .main-title {
+	padding: 10px 40px;
+	border: 10px double #f9f1e9;
+	text-transform: uppercase;
+	font-family: Londrina Outline, sans-serif;
+}
+.link {
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	line-height: 1;
+	color: #9e9ba4;
+	display: inline-block;
+}
+/* Takiri */
+.link--takiri {
+	font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 4em;
+    padding: 0 10px 20px;
+	-webkit-transition: color 0.5s;
+	transition: color 0.5s;
+	font-family: 'Great Vibes', cursive;
+}
+
+.link--takiri:hover {
+	color: #1e1a1b;
+}
+
+.link--takiri::before {
+	content: '';
+    position: absolute;
+    height: 36px;
+    width: 100%;
+    top: 50%;
+    margin-top: -18px;
+    left: -1%;
+    z-index: -1;
+    background: rgba(241, 236, 236, 0.47);
+    -webkit-transform: rotate3d(0,0,1,45deg) scale3d(0,1,1);
+    transform: rotate3d(0,0,1,45deg) scale3d(0,1,1);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.link--takiri:hover::before {
+	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
+	transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
+}
+
+.link--takiri span {
+	font-size: 25%;
+    font-weight: 400;
+    position: absolute;
+    right: 15px;
+    color: #fff;
+    bottom: -22px;
+    opacity: 0;
+    -webkit-transform: translate3d(-10px,-10px,0);
+    transform: translate3d(-10px,-10px,0);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    letter-spacing: 2px;
+}
+
+.link--takiri:hover span {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.demo-4 .main-title {
+	font-size: 6em;
+	font-weight: 300;
+	padding: 10px 30px;
+	text-transform: uppercase;
+	color: #222;
+}
+
+.main-title .thin {
+	font-weight: 200;
+}
+/*--responsive--*/
+@media (max-width:1440px){
+}
+@media (max-width:1366px){
+
+}
+@media (max-width:1280px){
+
+}
+@media only screen and (max-width :1024px) {
+	.demo-2 .main-title {
+		font-weight: normal;
+		font-size: 2.3em;
+	}
+	
+	
+}
+@media only screen and (max-width :991px) {
+	.demo-2 .main-title,h1.main-title {
+		font-weight: normal;
+		font-size: 1.9em;
+	}
+}
+@media only screen and (max-width :800px) {
+	.demo-1 .main-title, 
+	.demo-3 .main-title,
+	.demo-4 .main-title {
+		font-size: 3em;
+	}
+	.demo-2 .main-title {
+		font-size: 2em;
+	}
+	div#large-header {
+		height: 612px!important;
+	}
+}
+@media only screen and (max-width : 768px) {
+	.demo-1 .main-title, 
+	.demo-3 .main-title,
+	.demo-4 .main-title {
+		font-size: 3em;
+	}
+	.demo-2 .main-title {
+		font-size: 2em;
+	}
+	div#large-header {
+		height: 612px!important;
+	}
+}
+@media only screen and (max-width :736px) {
+	.demo-2 .main-title {
+		font-size: 1.5em;
+	}
+	div#large-header {
+		height:600px!important;
+	}
+}
+@media only screen and (max-width :600px) {
+
+	.demo-2 .main-title {
+		font-size: 1.3em;
+	}
+
+	
+}
+@media only screen and (max-width : 568px) {
+	div#large-header {
+		height: 400px!important;
+	}
+	canvas#demo-canvas {
+       height: 566px!important;
+	}
+	.demo-2 .main-title {
+		font-size: 1.3em;
+	}
+}
+@media only screen and (max-width :480px) {
+	div#large-header {
+		   height: 400px!important;
+	}
+	canvas#demo-canvas {
+         height: 566px!important;
+	}
+	.link--takiri span {
+		font-size: 17px;
+		font-weight: 400;
+		position: absolute;
+		right: -73px;
+		bottom: -20px;
+		opacity: 0;
+		letter-spacing: 1px;
+	}
+}
+@media only screen and (max-width :375px) {
+	.link--takiri::before {
+		content: '';
+		position: absolute;
+		height: 11px;
+		width: 100%;
+		top: 50%;
+	}
+	.link--takiri span {
+		font-weight: 100;
+		position: absolute;
+		right: 15px;
+		bottom: -22px;
+	}
+	div#large-header {
+		height:300px!important;
+	}
+}
+@media only screen and (max-width :320px) {
+	.demo-2 .main-title {
+		font-size: 0.9em;
+	}
+	
+	canvas#demo-canvas {
+		height:404px!important;
+	}
+	.link--takiri span {
+		font-weight: normal;
+		position: absolute;
+		right: -39px;
+		color: #fff;
+		font-size: 14px;
+		bottom: -2px;
+	}
+	.link--takiri::before {
+		content: '';
+		position: absolute;
+		height: 16px;
+		width: 100%;
+		top: 50%;
+		margin-top: -18px;
+		left: -1%;
+	}
+}
