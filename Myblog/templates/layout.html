@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Summer,s blog</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Ö÷ÌâµÄ¸öÈË²©¿ÍÄ£°å£¬ÓÅÑÅ¡¢ÎÈÖØ¡¢´óÆø,µÍµ÷¡£" />
+<link href="{{url_for('static',filename='css/base.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/index.css')}}" rel="stylesheet">
+<style>
+#content{
+border:5px groove gray;
+padding: 10px;
+margin-top: 20px;
+box-shadow: 10px 7px 3px 2px gray;}
+</style>
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav"><a href="{{url_for('index')}}"><span>Hello Welcome Summer's blog</span><span class="en">我的博客</span></a><a href="{{url_for('index')}}"><span>首页</span><span class="en">Protal</span></a><a href="{{url_for('list')}}"><span>文章列表</span><span class="en">List of articles</span></nav>
+</header>
+<div class="banner">
+  <section class="box">
+    <ul class="texts">
+      <p>打了死结的青春，捆死一颗苍白绝望的灵魂。</p>
+            <p>为自己掘一个坟墓来葬心，红尘一梦，不再追寻。</p>
+          <p>加了锁的青春，不会再因谁而推开心门。</p>
+    </ul>
+   </section>
+</div>
+<div class="template">
+  <div class="box">
+    <ul>
+      <li><a href="/" target="_blank"><img src="{{url_for('static',filename='images/01.jpg')}}"></a><span>仿新浪博客风格·梅</span></li>
+      <li><a href="/" target="_blank"><img src="{{url_for('static',filename='images/02.jpg')}}"></a><span>黑色质感时间轴</span></li>
+      <li><a href="/" target="_blank"><img src="{{url_for('static',filename='images/03.jpg')}}"></a><span>Green绿色小清新的夏天</span></li>
+      <li><a href="/" target="_blank"><img src="{{url_for('static',filename='images/04.jpg')}}"></a><span>女生清新个人博客</span></li>
+      <li><a href="/" target="_blank"><img src="{{url_for('static',filename='images/02.jpg')}}"></a><span>黑色质感时间轴</span></li>
+      <li><a href="/" target="_blank"><img src="{{url_for('static',filename='images/03.jpg')}}"></a><span>Green绿色小清新的夏天</span></li>
+    </ul>
+  </div>
+</div
+ <div id="content">                                                                                               
+ {% block body %} {% endblock %}                                                                                 
+ </div>  
+<script src="{{url_for('static',filename='js/silder.js')}}"></script>
+</body>
+</html>

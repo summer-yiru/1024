@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1 style="color: red;font-family: Georgia ;box-shadow: 10px 10px 5px #888888;">文章内容</h1>
+<div style = "border:2px solid gray">
+<h2 style = "color:#0000FF;margin:10px">{{post['title']}}</h2>
+<h4 style = "color :#00FF00;margin-botton=10px">{{post['timestamp']}}</h4>
+<p style = "font-size:15px;padding = 20px;border:1px solid #00FFFF;color :#505050">{{post['content']}}</p>
+</div>
+{% endblock %}
